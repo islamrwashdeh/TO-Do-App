@@ -1,10 +1,20 @@
-import "./styles.css";
+import ToDo from "./components/todo/todo.js";
+import "./App.scss";
+import UseSettings from "./context/Settings";
+import Header from "./components/header/header.js";
+import DisplayContext from "./context/DisplayCompleted.js";
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <DisplayContext>
+      <UseSettings>
+        <div className="App">
+          <Header />
+          <ToDo />
+        </div>
+      </UseSettings>
+    </DisplayContext>
   );
 }
+
+export default App;
